@@ -21,7 +21,10 @@ def HOME():
 def predict():
     query = str(request.form.get("food_string"))
     api_url = 'https://api.api-ninjas.com/v1/nutrition?query={}'.format(query)
-    response = requests.get(api_url, headers={'X-Api-Key': 'NSmmbao+4W6FEzsYy+YQfg==U1MJeNXVMcUUwGEt'})
+
+    api_key = 'NSmmbao+4W6FEzsYy+YQfg==U1MJeNXVMcUUwGEt'
+
+    response = requests.get(api_url, headers={'X-Api-Key': api_key})
 
     response_data = json.loads(response.text)
    
